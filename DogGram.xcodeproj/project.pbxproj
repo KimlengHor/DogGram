@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		711AE88D2A6200F70088470D /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711AE88C2A6200F70088470D /* ImageGridView.swift */; };
+		711AE88F2A6204ED0088470D /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711AE88E2A6204ED0088470D /* UploadView.swift */; };
 		717854212A60406500568D86 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717854202A60406500568D86 /* MessageView.swift */; };
 		71BDFAD02A6080A9008E14CE /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BDFACF2A6080A9008E14CE /* BrowseView.swift */; };
 		71BDFAD22A608107008E14CE /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BDFAD12A608107008E14CE /* CarouselView.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		711AE88C2A6200F70088470D /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
+		711AE88E2A6204ED0088470D /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		717854202A60406500568D86 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		71BDFACF2A6080A9008E14CE /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 		71BDFAD12A608107008E14CE /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				71F57DC42A54A2B300211449 /* FeedView.swift */,
 				71F62E212A5B8DFB00DD4F27 /* CommentsView.swift */,
 				71BDFACF2A6080A9008E14CE /* BrowseView.swift */,
+				711AE88E2A6204ED0088470D /* UploadView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 				71F57DC62A54A34500211449 /* PostView.swift */,
 				717854202A60406500568D86 /* MessageView.swift */,
 				71BDFAD12A608107008E14CE /* CarouselView.swift */,
+				711AE88C2A6200F70088470D /* ImageGridView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -217,10 +223,12 @@
 				717854212A60406500568D86 /* MessageView.swift in Sources */,
 				71F57DC32A54A12000211449 /* Extensions.swift in Sources */,
 				71F57DCC2A54DFF800211449 /* PostArrayObject.swift in Sources */,
+				711AE88D2A6200F70088470D /* ImageGridView.swift in Sources */,
 				71F57DC72A54A34600211449 /* PostView.swift in Sources */,
 				71BDFAD02A6080A9008E14CE /* BrowseView.swift in Sources */,
 				71DFF4F92A6048E80064883C /* CommentModel.swift in Sources */,
 				71F62E222A5B8DFB00DD4F27 /* CommentsView.swift in Sources */,
+				711AE88F2A6204ED0088470D /* UploadView.swift in Sources */,
 				71BDFAD22A608107008E14CE /* CarouselView.swift in Sources */,
 				71F57DAF2A54773A00211449 /* DogGramApp.swift in Sources */,
 			);
