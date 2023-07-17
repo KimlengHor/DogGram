@@ -60,7 +60,7 @@ struct PostImageView: View {
                         .cornerRadius(12)
                         .padding(.horizontal)
                 }
-                .tint(Color.MyTheme.yelloColor)
+                .tint(Color.MyTheme.yellowColor)
             }
         }
     }

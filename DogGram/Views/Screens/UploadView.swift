@@ -25,7 +25,7 @@ struct UploadView: View {
                     Text("Take photo".uppercased())
                         .font(.largeTitle)
                         .bold()
-                        .foregroundColor(Color.MyTheme.yelloColor)
+                        .foregroundColor(Color.MyTheme.yellowColor)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.MyTheme.purpleColor)
@@ -40,7 +40,7 @@ struct UploadView: View {
                         .foregroundColor(Color.MyTheme.purpleColor)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color.MyTheme.yelloColor)
+                .background(Color.MyTheme.yellowColor)
             }
             .sheet(isPresented: $showImagePicker, onDismiss: {
                 segueToPostImageView()

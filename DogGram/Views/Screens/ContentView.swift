@@ -32,7 +32,7 @@ struct ContentView: View {
                     Text("Upload")
                 }
             
-            Text("Screen 4")
+            ProfileView(profileDisplayName: "My Profile", profileUserID: "", isMyProfile: true)
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")

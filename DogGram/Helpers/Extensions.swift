@@ -13,7 +13,7 @@ extension Color {
             return Color("ColorPurple")
         }
         
-        static var yelloColor: Color {
+        static var yellowColor: Color {
             return Color("ColorYellow")
         }
         
