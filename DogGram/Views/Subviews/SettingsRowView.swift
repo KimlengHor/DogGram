@@ -30,6 +30,7 @@ struct SettingsRowView: View {
                 .font(.headline)
         }
         .padding(.vertical, 4)
+        .foregroundColor(.primary)
     }
 }
 
