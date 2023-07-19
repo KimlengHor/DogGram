@@ -10,10 +10,19 @@ import SwiftUI
 struct PostView: View {
     
     @State var post: PostModel
+    @State var postImage = UIImage(named: "dog1")!
     @State var animateLike: Bool = false
     @State var addHeartAnimationToView: Bool
+    @State var showActionSheet: Bool = false
+    @State var confirmDialogType = PostConfirmDialogOption.general
     
     var showHeaderAndFooter: Bool
+    
+    enum PostConfirmDialogOption {
+        case general
+        case reporting
+        
+    }
     
     var body: some View {
         VStack {
@@ -23,7 +32,7 @@ struct PostView: View {
                     NavigationLink {
                         ProfileView(profileDisplayName: post.username, profileUserID: post.userID, isMyProfile: false)
                     } label: {
-                        Image("dog1")
+                        Image(uiImage: postImage)
                             .resizable()
                             .scaledToFill()
                             .frame(width: 30, height: 30)
@@ -37,8 +46,17 @@ struct PostView: View {
                     
                     Spacer()
                     
-                    Image(systemName: "ellipsis")
-                        .font(.headline)
+                    Button {
+                        showActionSheet.toggle()
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .font(.headline)
+                            .foregroundColor(Color.primary)
+                    }
+                    .confirmationDialog("What would you like to do?", isPresented: $showActionSheet, titleVisibility: .visible) {
+                        
+                        getDialogButtons()
+                    }
                 }
                 .padding(6)
             }
@@ -76,7 +94,13 @@ struct PostView: View {
                             .foregroundColor(.primary)
                     }
                     
-                    Image(systemName: "paperplane")
+                    Button {
+                        sharePost()
+                    } label: {
+                        Image(systemName: "paperplane")
+                    }
+                    .tint(Color.primary)
+
                     Spacer()
                 }
                 .font(.title3)
@@ -107,6 +131,81 @@ struct PostView: View {
     func unlikePost() {
         let updatedPost = PostModel(postID: post.postID, userID: post.userID, username: post.username, caption: post.caption, dateCreated: post.dateCreated, likeCount: post.likeCount - 1, likedByUser: false)
         self.post = updatedPost
+    }
+    
+    func getDialogButtons() -> some View {
+        VStack {
+            switch self.confirmDialogType {
+            
+            case .general:
+                VStack {
+                    Button(role: .destructive) {
+                        self.confirmDialogType = .reporting
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            self.showActionSheet.toggle()
+                        }
+                    } label: {
+                        Text("Report")
+                    }
+                    
+                    Button {
+                        
+                    } label: {
+                        Text("Learn more...")
+                    }
+                    
+                    Button(role: .cancel) {
+                        
+                    } label: {
+                        Text("Cancel")
+                    }
+                }
+                
+            case .reporting:
+                VStack {
+                    Button(role: .destructive) {
+                        
+                    } label: {
+                        Text("This is inappropiate")
+                    }
+                    
+                    Button(role: .destructive) {
+                        
+                    } label: {
+                        Text("This is spam")
+                    }
+                    
+                    Button(role: .destructive) {
+                        
+                    } label: {
+                        Text("It made me uncomfortable")
+                    }
+                    
+                    Button(role: .cancel) {
+                        self.confirmDialogType = .general
+                    } label: {
+                        Text("Cancel")
+                    }
+                }
+            }
+        }
+    }
+    
+    func reportPost(reason: String) {
+        print("REPORT POST NOW")
+    }
+    
+    func sharePost() {
+        
+        let message = "Check out this post on DogGram"
+        let image = postImage
+        let link = URL(string: "https://www.google.com")!
+        
+        let activityViewController = UIActivityViewController(activityItems: [message, image, link], applicationActivities: nil)
+        
+        let viewController = UIApplication.shared.windows.first?.rootViewController
+        viewController?.present(activityViewController, animated: true)
     }
 }
 
