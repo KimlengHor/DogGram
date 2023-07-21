@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct OnboardingView: View {
     
@@ -42,7 +43,7 @@ struct OnboardingView: View {
             }
 
             Button {
-                showOnboardingPart2.toggle()
+                SignInWithGoogle.instance.startSignInWithGoogleFlow(view: self)
             } label: {
                 HStack {
                     Image(systemName: "globe")
@@ -75,6 +76,18 @@ struct OnboardingView: View {
         }
         .alert(isPresented: $showError) {
             return Alert(title: Text("Error signing in 😭"))
+        }
+    }
+    
+    //MARK: FUNCTIONS
+    func connectToFirebase(name: String, email: String, provider: String, credential: AuthCredential) {
+        AuthService.instance.logInUserToFirebase(credential: credential) { providerID, isError in
+            if let providerID = providerID, !isError {
+                
+            } else {
+                print("Error getting info from log in user to Firebase")
+                self.showError.toggle()
+            }
         }
     }
 }
