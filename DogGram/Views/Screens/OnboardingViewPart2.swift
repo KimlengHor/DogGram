@@ -9,8 +9,13 @@ import SwiftUI
 
 struct OnboardingViewPart2: View {
     
-    @State var displayName: String = ""
+    @Binding var displayName: String
+    @Binding var email: String
+    @Binding var providerID: String
+    @Binding var provider: String
+    
     @State var showImagePicker = false
+    @State var showError = false
     
     //For image picker
     @State var imageSelected: UIImage = UIImage(named: "logo")!
@@ -57,16 +62,30 @@ struct OnboardingViewPart2: View {
         }) {
             ImagePicker(imageSelected: $imageSelected, sourceType: $sourceType)
         }
+        .alert(isPresented: $showError) {
+            return Alert(title: Text("Error creating profile!"))
+        }
     }
     
     //MARK: FUNCTIONS
     func createProfile() {
-        
+        AuthService.instance.createNewUserInDatabase(name: displayName, email: email, providerID: providerID, provider: provider, profileImage: imageSelected) { userID in
+            
+            if let userID = userID {
+                
+            } else {
+                print("Error creating user in the database")
+                self.showError.toggle()
+            }
+        }
     }
 }
 
 struct OnboardingViewPart2_Previews: PreviewProvider {
+    
+    @State static var testString: String = "Test"
+    
     static var previews: some View {
-        OnboardingViewPart2()
+        OnboardingViewPart2(displayName: $testString, email: $testString, providerID: $testString, provider: $testString)
     }
 }

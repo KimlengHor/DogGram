@@ -11,11 +11,17 @@
 
 import Foundation
 import FirebaseAuth
+import SwiftUI
+import FirebaseFirestore
+
+let DB_BASE = Firestore.firestore()
 
 class AuthService {
     
     //MARK: PROPERTIES
     static let instance = AuthService()
+    
+    private var REF_USERS = DB_BASE.collection("users")
     
     //MARK: AUTH USER FUNCTIONS
     func logInUserToFirebase(credential: AuthCredential, handler: @escaping (_ providerID: String?, _ isError: Bool) -> ()) {
@@ -33,6 +39,32 @@ class AuthService {
             }
             
             handler(providerID, false)
+        }
+    }
+    
+    func createNewUserInDatabase(name: String, email: String, providerID: String, provider: String, profileImage: UIImage, hander: @escaping(_ userID: String?) -> ()) {
+        
+        let document = REF_USERS.document()
+        let userID = document.documentID
+        
+        let userData : [String: Any] = [
+            DatabaseUserField.displayName: name,
+            DatabaseUserField.email: email,
+            DatabaseUserField.providerID: providerID,
+            DatabaseUserField.provider: provider,
+            DatabaseUserField.userID: userID,
+            DatabaseUserField.bio: "",
+            DatabaseUserField.dateCreated: FieldValue.serverTimestamp(),
+        ]
+        
+        document.setData(userData) { error in
+            if let error = error {
+                print("Uploading data failed", error.localizedDescription)
+                hander(nil)
+                return
+            }
+            
+            hander(userID)
         }
     }
 }

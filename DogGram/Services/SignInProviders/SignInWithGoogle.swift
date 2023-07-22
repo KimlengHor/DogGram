@@ -38,7 +38,7 @@ class SignInWithGoogle: NSObject {
             let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                      accessToken: user.accessToken.tokenString)
             
-            self.onboardingView.connectToFirebase(name: name, email: email, provider: "google", credential: credential)
+            self.onboardingView.connectToFirebase(name: fullName, email: email, provider: "google", credential: credential)
         }
     }
 }

@@ -32,6 +32,7 @@
 		71C95CE42A6AD05300B9C7EA /* SignInWithGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C95CE32A6AD05300B9C7EA /* SignInWithGoogle.swift */; };
 		71C95CE72A6AD5CD00B9C7EA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C95CE62A6AD5CD00B9C7EA /* AuthService.swift */; };
 		71DFF4F92A6048E80064883C /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFF4F82A6048E80064883C /* CommentModel.swift */; };
+		71E120382A6C1D9E0043EFF2 /* Enums & Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E120372A6C1D9D0043EFF2 /* Enums & Structs.swift */; };
 		71E7BA9D2A66D609003029E8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7BA9C2A66D609003029E8 /* SignUpView.swift */; };
 		71E7BA9F2A66DB65003029E8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7BA9E2A66DB65003029E8 /* OnboardingView.swift */; };
 		71E7BAA12A66DCBF003029E8 /* SignInWithAppleButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7BAA02A66DCBF003029E8 /* SignInWithAppleButtonCustom.swift */; };
@@ -72,6 +73,7 @@
 		71C95CE32A6AD05300B9C7EA /* SignInWithGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithGoogle.swift; sourceTree = "<group>"; };
 		71C95CE62A6AD5CD00B9C7EA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		71DFF4F82A6048E80064883C /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		71E120372A6C1D9D0043EFF2 /* Enums & Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums & Structs.swift"; sourceTree = "<group>"; };
 		71E7BA9C2A66D609003029E8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		71E7BA9E2A66DB65003029E8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		71E7BAA02A66DCBF003029E8 /* SignInWithAppleButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonCustom.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				71F57DC22A54A12000211449 /* Extensions.swift */,
+				71E120372A6C1D9D0043EFF2 /* Enums & Structs.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				71F62E222A5B8DFB00DD4F27 /* CommentsView.swift in Sources */,
 				71AEF3262A643FCB004FA10D /* ProfileHeaderView.swift in Sources */,
 				711AE88F2A6204ED0088470D /* UploadView.swift in Sources */,
+				71E120382A6C1D9E0043EFF2 /* Enums & Structs.swift in Sources */,
 				71E7BA9F2A66DB65003029E8 /* OnboardingView.swift in Sources */,
 				71C95CE42A6AD05300B9C7EA /* SignInWithGoogle.swift in Sources */,
 				711AE8942A6301430088470D /* ImagePicker.swift in Sources */,
